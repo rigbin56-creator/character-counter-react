@@ -2,3 +2,7 @@
   margin: 0;
   padding: 0;
 }
+
+main.dark-theme {
+  background-color: black;
+}

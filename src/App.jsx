@@ -1,5 +1,9 @@
 import { use, useState } from "react"
 import { Header } from "./components/Header"
+import { WriteArea } from "./components/WriteArea"
+import { Controls } from "./components/Controls"
+import { Stats } from "./components/Stats"
+import { LetterDensity } from "./components/LetterDensity"
 
 const  App = () => {
   const [text, setText] = useState("Hola, esto es un texto de prueba")
@@ -8,6 +12,13 @@ const  App = () => {
   const [limitCharacter, setLimitCharacter] = useState(false)
   const [limitValue, setLimitValue] = useState(300)
   const [showAll, setShowAll] = useState(false)
+  const [dark, setDarkTheme] = useState(JSON.parse(localStorage.getItem("theme") === "dark" ? true : false))
+
+  const handleExcludeSpaces = () => {
+    serExlcudeSpaces(!excludeSpaces)
+  } 
+  // creo q falta algo
+
 
   const characters = excludeSpaces ? text.replace(/\s/g, "").length : text.length
 
@@ -62,13 +73,26 @@ const  App = () => {
 
   const visibleLetters = showAll ? sortLetters : sortLetters.slice(0, 5)
 
+  const  handleDarkTheme = () => {
+    setDarkTheme(!dark)
+    if (!dark) {
+      localStorage.setItem("theme", JSON.stringify("dark"))
+    } else {
+      localStorage.removeItem("theme")
+    }
+  }
+
   return(
   <main>
-     <Header />
+     <Header dark={dark} handleDarkTheme={handleDarkTheme}/>
     <h2>Analyze your text <br /> 
     in real-time.</h2>
-    <textarea placeholder="Escribe tu texto..." onChange={(e) => setText(e.target.value)} value={text}></textarea>
-    <div>
+    {/* <textarea placeholder="Escribe tu texto..." onChange={(e) => setText(e.target.value)} value={text}></textarea> */}
+    <WriteArea 
+    handleChangeTextarea={handleChangeTextarea}
+    text={text}
+    />
+    {/* <div>
         <label>
           <input type="checkbox"  checked={limitCharacter} onChange={handleInputLimit}/>
           Limite de caracteres
@@ -79,12 +103,31 @@ const  App = () => {
           onChange={(e) => setLimitValue(e.target.value)}
           />
         }
-    </div>
-    <p>Cantidad de caracteres: {characters}</p>
+    </div> */}
+    <Controls 
+    excludeSpaces={excludeSpaces}
+    handleExcludeSpaces={handleExcludeSpaces}
+    limitCharacter={limitCharacter}
+    handleChangeInputLimit={handleChangeInputLimit}
+    limitValue={limitValue}
+    handleLimitValue={handleLimitValue}
+    />
+
+    <Stats 
+    words={words}
+    sentences={sentences}
+    readingTime={readingTime}
+    characters={characters}
+    />
+    {/* <p>Cantidad de caracteres: {characters}</p>
     <p>Cantidad de palabras: {words}</p>
     <p>Cantidad de oraciones: {sentences}</p>
-    <p>Tiempo aprox de lectura: {readingTime} min</p>
-    <section>
+    <p>Tiempo aprox de lectura: {readingTime} min</p> */}
+    
+    {
+      text && <LetterDensity  />
+    }
+    {/* <section>
         <h2>Cantidad de letras</h2>
         <button onClick={() => setShowAll(!showAll)}>{showAll ? "Ver menos" : "Ver todos"}</button>
         <article>
@@ -97,7 +140,7 @@ const  App = () => {
               </div>)
             }
         </article>
-    </section>
+    </section> */}
     
   </main>)
 }
