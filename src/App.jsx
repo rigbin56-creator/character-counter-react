@@ -106,12 +106,12 @@ const App = () => {
 
   return (
     <>
+    <main className={dark ? "dark-theme" : ""}>
       <Header
         dark={dark}
         handleDarkTheme={handleDarkTheme}
       />
 
-      <main>
         <WriteArea
           text={text}
           handleChangeTextarea={handleChangeTextarea}
