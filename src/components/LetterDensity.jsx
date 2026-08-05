@@ -11,20 +11,22 @@ const LetterDensity = ({
 
   return (
     <section>
-      <h2>Cantidad de letras</h2>
+      <div>
+        <h2>Cantidad de letras</h2>
 
-      <button onClick={() => setShowAll(!showAll)}>
-        {showAll ? "Ver menos" : "Ver todos"}
-      </button>
+        <button onClick={() => setShowAll(!showAll)}>
+          {showAll ? "Ver menos" : "Ver todos"}
+        </button>
+      </div>
 
-      <article>
+      <div className="density-list">
         {visibleLetters.map((letter) => (
           <ProgressBar
             key={letter.letter}
             letter={letter}
           />
         ))}
-      </article>
+      </div>
     </section>
   )
 }

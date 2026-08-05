@@ -124,6 +124,7 @@ const App = () => {
           handleInputLimit={handleInputLimit}
           limitValue={limitValue}
           setLimitValue={setLimitValue}
+          readingTime={readingTime}
         />
 
         <Stats
