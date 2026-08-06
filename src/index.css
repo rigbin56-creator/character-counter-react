@@ -115,7 +115,7 @@ header > button:hover {
   line-height: 1.08;
 }
 
-/* area de texto */
+/* textarea */
 
 .inputs-zone {
   display: flex;
@@ -150,7 +150,7 @@ textarea:focus {
   border-color: var(--blue);
 }
 
-/* controles */
+/* controls */
 
 main > section:nth-of-type(2) {
   display: flex;
@@ -210,7 +210,7 @@ input[type="checkbox"]:checked::after {
   transform: translate(-50%, -50%);
 }
 
-/* campo numérico */
+/* campo numerico */
 
 input[type="number"] {
   width: 72px;
@@ -226,3 +226,64 @@ input[type="number"]:focus {
   outline: none;
   border-color: var(--blue);
 }
+
+/* estadísticas */
+
+main > section:nth-of-type(3) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.result-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 155px;
+  padding: 22px;
+  border-radius: 20px;
+  color: #12131a;
+  box-shadow: var(--shadow);
+}
+
+.result-card p {
+  margin-top: auto;
+  color: #12131a;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.total-value-result {
+  margin-top: 4px;
+  color: #12131a;
+  font-size: clamp(52px, 7vw, 80px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* imagenes de fondo */
+
+.card-total-characters {
+  background-color: var(--purple);
+  background-image: url("./src/assets/card-background/purple.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-word-count {
+  background-color: var(--orange);
+  background-image: url("./src/assets/card-background/orange.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card-sentence-count {
+  background-color: var(--coral);
+  background-image: url("./src/assets/card-background/coral.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
