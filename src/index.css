@@ -263,7 +263,7 @@ main > section:nth-of-type(3) {
 
 .card-total-characters {
   background-color: var(--purple);
-  background-image: url("./public/card-background/purple.png");
+  background-image: url("/card-background/purple.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -271,7 +271,7 @@ main > section:nth-of-type(3) {
 
 .card-word-count {
   background-color: var(--orange);
-  background-image: url("./public/card-background/orange.png");
+  background-image: url("/card-background/orange.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -279,7 +279,7 @@ main > section:nth-of-type(3) {
 
 .card-sentence-count {
   background-color: var(--coral);
-  background-image: url("./public/card-background/coral.png");
+  background-image: url("/card-background/coral.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
