@@ -16,8 +16,6 @@
   --border: #d4d4d8;
   --blue: #3b82f6;
   --purple: #c99dff;
-  --orange: #ffb21e;
-  --coral: #ff8a65;
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -61,7 +59,6 @@ main {
   padding: 24px 16px 50px;
   background-color: var(--bg-main);
   color: var(--text-main);
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* header */
@@ -98,7 +95,7 @@ header > button {
 }
 
 header > button:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 /* título principal */
@@ -138,7 +135,6 @@ textarea {
   font-size: 23px;
   line-height: 1.45;
   box-shadow: var(--shadow);
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 textarea::placeholder {
@@ -287,3 +283,75 @@ main > section:nth-of-type(3) {
   background-repeat: no-repeat;
 }
 
+/* letter density*/
+
+main > section:nth-of-type(4) {
+  margin-top: 42px;
+}
+
+main > section:nth-of-type(4) > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+main > section:nth-of-type(4) h2 {
+  font-size: 22px;
+}
+
+main > section:nth-of-type(4) button {
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+main > section:nth-of-type(4) button:hover {
+  color: var(--blue);
+}
+
+.density-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.density-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.letter {
+  width: 18px;
+  color: var(--text-muted);
+  font-weight: 700;
+  text-align: center;
+}
+
+.bar {
+  flex: 1;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background-color: var(--bg-card);
+}
+
+.fill {
+  height: 100%;
+  border-radius: 999px;
+  background-color: var(--purple);
+  transition: width 0.3s ease;
+}
+
+.stats {
+  width: 95px;
+  color: var(--text-muted);
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+}
