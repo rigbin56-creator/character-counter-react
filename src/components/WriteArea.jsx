@@ -1,10 +1,12 @@
 const WriteArea = ({ text, handleChangeTextarea }) => {
   return (
-    <textarea
-      placeholder="Escribe tu texto..."
-      onChange={handleChangeTextarea}
-      value={text}>
-    </textarea>
+    <section className="inputs-zone">
+      <textarea
+        placeholder="Escribe tu texto..."
+        onChange={handleChangeTextarea}
+        value={text}
+      />
+    </section>
   )
 }
 

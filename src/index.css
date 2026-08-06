@@ -1,11 +1,55 @@
+/* reset */
+
 * {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* paleta de colores */
+
+:root {
+  --bg-main: #f4f4f5;
+  --bg-card: #ffffff;
+  --text-main: #18181b;
+  --text-muted: #71717a;
+  --border: #d4d4d8;
+  --blue: #3b82f6;
+  --purple: #c99dff;
+  --orange: #ffb21e;
+  --coral: #ff8a65;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* tema oscuro */
+
 main.dark-theme {
-  background-color: rgb(58, 52, 52);
-  color: rgb(243, 209, 245);
+  --bg-main: #12131a;
+  --bg-card: #1c1f2a;
+  --text-main: #f2f2f7;
+  --text-muted: #a1a1aa;
+  --border: #303442;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* estilos generales */
+
+body {
+  width: min(1200px, 90%);
+  min-height: 100vh;
+  margin: auto;
+
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  min-height: 100vh;
+  padding-bottom: 50px;
+
+  background: var(--bg-main);
+  color: var(--text-main);
+
+  transition: 0.3s;
 }
