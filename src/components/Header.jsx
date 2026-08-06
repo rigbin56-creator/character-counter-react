@@ -9,7 +9,7 @@ const Header = ({ dark, handleDarkTheme }) => {
 
       <button onClick={handleDarkTheme}>
         <img 
-          src={dark ? "./src/assets/icons/light-mode.png" : "./src/assets/icons/dark-mode.png"} 
+          src={dark ? "./public/icons/light-mode.png" : "./public/icons/dark-mode.png"} 
           alt="icono tema" 
           style={{ width: "28px", height: "28px" }}
         />
